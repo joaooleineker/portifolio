@@ -1,13 +1,11 @@
-/* Estilo padrão para telas grandes */
-body {
+/* Garante que o html e o body não tenham rolagem horizontal */
+html, body {
     padding: 0;
     margin: 0;
-    background: url('../imgs/background.png') no-repeat center center; /* Define a imagem como background */
-    background-size: cover; /* Faz o background ocupar toda a tela */
-    background-attachment: scroll; /* Corrige problemas de "fixed" em dispositivos móveis */
-    background-repeat: no-repeat; /* Evita que a imagem se repita */
-    min-height: 100vh; /* Garante que o fundo cubra toda a altura da tela */
     overflow-x: hidden; /* Remove qualquer rolagem horizontal */
+    width: 100%; /* Garante que o body não ultrapasse a largura da tela */
+    height: 100%; /* Garante que o body ocupe toda a altura da tela */
+    background-color: white; /* Define o fundo como branco */
 }
 
 .saudacao {
@@ -53,6 +51,8 @@ body {
     left: 50%; 
     transform: translate(-50%, -50%);
     background: none;
+    max-width: 100%; /* Garante que os elementos não ultrapassem a largura da tela */
+    box-sizing: border-box; /* Inclui padding e bordas no cálculo da largura */
 }
 
 .background-nome {
@@ -63,6 +63,8 @@ body {
     height: auto; /* Ajusta a altura automaticamente ao conteúdo */
     text-align: left; /* Alinha o texto à esquerda */
     background: none;
+    max-width: 100%; /* Garante que os elementos não ultrapassem a largura da tela */
+    box-sizing: border-box; /* Inclui padding e bordas no cálculo da largura */
 }
 
 .foto-circulo {
@@ -77,6 +79,8 @@ body {
     border: 5px solid white;
     border-style: hidden;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    max-width: 100%; /* Garante que os elementos não ultrapassem a largura da tela */
+    box-sizing: border-box; /* Inclui padding e bordas no cálculo da largura */
 }
 
 .foto-circulo img {
@@ -86,13 +90,71 @@ body {
     object-position: center;
 }
 
+/* Garante que nenhum elemento ultrapasse os limites da tela */
+.container, .background-nome, .foto-circulo {
+    max-width: 100%; /* Garante que os elementos não ultrapassem a largura da tela */
+    box-sizing: border-box; /* Inclui padding e bordas no cálculo da largura */
+}
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: white;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 10px 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000; /* Garante que a navbar fique acima de outros elementos */
+    font-family: Monaco, monospace;
+}
+
+.logo {
+    font-size: 24px;
+    color: midnightblue;
+    font-weight: bold;
+}
+.logo span {
+    color: black;
+}
+
+.nav-links {
+    display: flex;
+    gap: 20px; /* Espaçamento entre os links */
+}
+
+.nav-links li {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: black;
+    font-size: 18px;
+    transition: color 0.3s ease; /* Transição suave para a mudança de cor */
+}
+
+.nav-links a:hover, .nav-links a.active {
+    background: #6c63ff;
+    color: white;
+}
+
+.linkedin {
+    
+    height: 35px;
+    display: flex;
+    position: fixed;
+    justify-content: space-between;
+    padding: 10px 20px;
+    right: 0%;
+    top: 0;
+}
+
 /* Para telas grandes (até 1440px) */
 @media (max-width: 1440px) {
-    body {
-        background: url('../imgs/background.png') no-repeat center center;
-        background-size: cover; /* Mantém a imagem cobrindo a tela */
-    }
-
     .container {
         gap: 30px; /* Aumenta o espaçamento entre os itens */
     }
@@ -110,13 +172,8 @@ body {
 
 /* Para telas médias (tablets, entre 768px e 1024px) */
 @media (max-width: 1024px) {
-    body {
-        background: url('../imgs/background.png') no-repeat center center;
-        background-size: cover; /* Mantém a imagem cobrindo a tela */
-    }
-
     .container {
-        flex-direction: column; /* Alinha os itens verticalmente em telas menores */
+        flex-direction: row-reverse; /* Alinha os itens horizontalmente */
         gap: 10px; /* Reduz o espaçamento entre os itens */
     }
 
@@ -127,13 +184,9 @@ body {
 
 /* Para telas pequenas (smartphones, até 768px) */
 @media (max-width: 768px) {
-    body {
-        background: url('../imgs/background.png') no-repeat center center;
-        background-size: cover; /* Mantém a imagem cobrindo a tela */
-    }
-
     .container {
-        flex-direction: column; /* Alinha os itens verticalmente */
+        flex-direction: column-reverse; /* Alinha os itens verticalmente */
+        display: flex;
         gap: 10px; /* Reduz o espaçamento entre os itens */
     }
 
@@ -145,5 +198,23 @@ body {
     .foto-circulo {
         width: 300px; /* Reduz o tamanho da foto */
         height: 300px;
+    }
+
+    @media (max-width: 500px) {
+        .container {
+            flex-direction: column-reverse; /* Alinha os itens verticalmente */
+            gap: 5px; /* Reduz o espaçamento entre os itens */
+        }
+
+        .background-nome {
+            width: 100%; /* Ajusta a largura para preencher a tela */
+            padding: 5px; /* Reduz o padding para telas menores */
+        }
+
+        .foto-circulo {
+            width: 250px; /* Reduz o tamanho da foto */
+            height: 250px;
+            display: none;
+        }
     }
 }
