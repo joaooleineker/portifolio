@@ -1,0 +1,36 @@
+body {
+    padding: 0;
+    margin: 0;
+    background-color: lightblue;
+}
+
+.nome {
+    text-align: center;
+    color: black;
+}
+
+.background-nome {
+    background-color: whitesmoke;
+    padding: 50px;
+    border-radius: 20px;
+    margin: 20px;
+    width: 400px;
+    height: 300px;
+    margin-left: 50%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: right;
+}
+
+.foto-circulo {
+    border-radius: 50%;
+    width: 400px;
+    height: 400px;
+    overflow: hidden;
+    position: relative;
+}
+
+.foto-circulo img {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
