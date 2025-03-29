@@ -40,19 +40,17 @@ html, body {
     font-size: 40px;
 }
 
-.container{
+.container {
     display: flex;
     justify-content: center;
-    align-items: center; /* Alinha verticalmente o texto com a foto */
-    flex-direction: row-reverse; /* Alinha os itens em uma linha (foto e texto lado a lado) */
-    gap: 20px; /* Espaçamento entre a foto e o texto */
-    position: absolute;
-    top: 50%;
-    left: 50%; 
-    transform: translate(-50%, -50%);
-    background: none;
-    max-width: 100%; /* Garante que os elementos não ultrapassem a largura da tela */
-    box-sizing: border-box; /* Inclui padding e bordas no cálculo da largura */
+    align-items: center;
+    flex-direction: row-reverse;
+    gap: 20px;
+    margin: 200px auto 100px; /* Adiciona 100px de espaço acima e 50px abaixo */
+    max-width: 1200px; /* Define uma largura máxima */
+    padding: 20px;
+    box-sizing: border-box;
+    position: relative; /* Garante que a posição seja relativa ao fluxo normal */
 }
 
 .background-nome {
@@ -155,13 +153,78 @@ html, body {
 .social-icons {
     display: flex;
     gap: 15px; /* Espaçamento entre os ícones */
-    margin-left: 72%; /* Empurra os ícones para a extrema direita */
+    margin-left: 67%; /* Empurra os ícones para a extrema direita */
 }
 
 .social-icons img {
     width: 35px; /* Ajusta o tamanho dos ícones */
     height: 35px;
     object-fit: contain;
+}
+
+.social-icons img:hover {
+    transform: scale(1.1); /* Aumenta o ícone ao passar o mouse */
+    transition: transform 0.3s ease; /* Transição suave para o efeito de hover */
+}
+
+.techs-container {
+    display: flex;
+    justify-content: center; /* Centraliza os ícones */
+    align-items: center;
+    margin: 50px auto; /* Adiciona espaço entre a container e a techs-container */
+    width: 100%;
+    max-width: 1200px; /* Define uma largura máxima */
+    text-align: center; /* Centraliza o conteúdo */
+    position: relative; /* Garante que a posição seja relativa ao fluxo normal */
+}
+
+.techs-container ul {
+    list-style: none; /* Remove os marcadores da lista */
+    padding: 0;
+    display: flex; /* Usa flexbox para alinhar os itens */
+    justify-content: center; /* Centraliza os itens horizontalmente */
+    gap: 20px; /* Adiciona espaçamento entre os itens */
+    flex-wrap: wrap; /* Permite que os itens quebrem para a próxima linha, se necessário */
+}
+
+.techs-container li {
+    display: inline-block; /* Exibe os itens em linha */
+    margin: 10px; /* Adiciona espaçamento entre os itens */
+    font-size: 18px;
+    font-weight: bold;
+    color: midnightblue;
+}
+
+.techs-container img {
+    width: 80px; /* Ajusta o tamanho do ícone */
+    height: 80px;
+    object-fit: contain;
+}
+
+.techs-container .separator {
+    font-size: 24px; /* Ajusta o tamanho do separador */
+    font-weight: bold;
+    color: midnightblue; /* Define a cor do separador */
+    display: flex;
+    align-items: center; /* Centraliza verticalmente */
+    justify-content: center; /* Centraliza horizontalmente */
+}
+
+.techs-container img:hover {
+    transform: scale(1.1); /* Aumenta o ícone ao passar o mouse */
+    transition: transform 0.3s ease; /* Transição suave para o efeito de hover */
+}
+
+footer{
+    background-color: white; /* Define o fundo como branco */
+    color: black; /* Define a cor do texto como preto */
+    text-align: center; /* Centraliza o texto */
+    padding: 20px; /* Adiciona espaçamento interno */
+    position: relative; /* Garante que a posição seja relativa ao fluxo normal */
+    bottom: 0; /* Posiciona o rodapé na parte inferior da página */
+    width: 100%; /* Garante que o rodapé ocupe toda a largura da tela */
+    box-sizing: border-box; /* Inclui padding e bordas no cálculo da largura */
+    font-family: Monaco, monospace; /* Define a fonte do rodapé */
 }
 
 /* Para telas grandes (até 1440px) */
@@ -180,7 +243,7 @@ html, body {
         height: 350px;
     }
     .social-icons {
-        margin-left: 63%; /* Ajusta a posição dos ícones para telas grandes */
+        margin-left: 55%; /* Ajusta a posição dos ícones para telas grandes */
     }
 }
 
@@ -195,7 +258,7 @@ html, body {
         width: 90%; /* Ajusta a largura para caber melhor em telas menores */
     }
     .social-icons {
-        margin-left: 48%; /* Ajusta a posição dos ícones para telas grandes */
+        margin-left: 38%; /* Ajusta a posição dos ícones para telas grandes */
     }
 }
 
@@ -217,7 +280,12 @@ html, body {
         height: 300px;
     }
     .social-icons {
-        margin-left: 31%; /* Ajusta a posição dos ícones para telas grandes */
+        margin-left: 17%; /* Ajusta a posição dos ícones para telas grandes */
+    }
+    .techs-container img {
+        width: 50px; /* Ajusta o tamanho do ícone */
+        height: 50px;
+        object-fit: contain;
     }
 
 @media (max-width: 500px) {
