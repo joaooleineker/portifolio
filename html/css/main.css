@@ -138,19 +138,30 @@ html, body {
 }
 
 .nav-links a:hover, .nav-links a.active {
-    background: #6c63ff;
+    background: midnightblue;
     color: white;
 }
 
-.linkedin {
-    
-    height: 35px;
+.linkedin-icon {
+    display: flex; /* Mantém alinhado com o conteúdo */
+    align-items: center; /* Centraliza verticalmente */
+    justify-content: center; /* Centraliza horizontalmente */
+    width: auto; /* Ajusta ao conteúdo */
+    height: auto; /* Ajusta ao conteúdo */
+    padding: 0; /* Remove espaços extras */
+    margin: 0; /* Remove margens desnecessárias */
+}
+
+.social-icons {
     display: flex;
-    position: fixed;
-    justify-content: space-between;
-    padding: 10px 20px;
-    right: 0%;
-    top: 0;
+    gap: 15px; /* Espaçamento entre os ícones */
+    margin-left: 72%; /* Empurra os ícones para a extrema direita */
+}
+
+.social-icons img {
+    width: 35px; /* Ajusta o tamanho dos ícones */
+    height: 35px;
+    object-fit: contain;
 }
 
 /* Para telas grandes (até 1440px) */
@@ -168,6 +179,9 @@ html, body {
         width: 350px; /* Ajusta o tamanho da foto */
         height: 350px;
     }
+    .social-icons {
+        margin-left: 63%; /* Ajusta a posição dos ícones para telas grandes */
+    }
 }
 
 /* Para telas médias (tablets, entre 768px e 1024px) */
@@ -179,6 +193,9 @@ html, body {
 
     .background-nome {
         width: 90%; /* Ajusta a largura para caber melhor em telas menores */
+    }
+    .social-icons {
+        margin-left: 48%; /* Ajusta a posição dos ícones para telas grandes */
     }
 }
 
@@ -199,8 +216,11 @@ html, body {
         width: 300px; /* Reduz o tamanho da foto */
         height: 300px;
     }
+    .social-icons {
+        margin-left: 31%; /* Ajusta a posição dos ícones para telas grandes */
+    }
 
-    @media (max-width: 500px) {
+@media (max-width: 500px) {
         .container {
             flex-direction: column-reverse; /* Alinha os itens verticalmente */
             gap: 5px; /* Reduz o espaçamento entre os itens */
