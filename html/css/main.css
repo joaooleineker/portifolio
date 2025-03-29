@@ -1,7 +1,13 @@
+/* Estilo padrão para telas grandes */
 body {
     padding: 0;
     margin: 0;
-    background-color: lightblue;
+    background: url('../imgs/background.png') no-repeat center center; /* Define a imagem como background */
+    background-size: cover; /* Faz o background ocupar toda a tela */
+    background-attachment: scroll; /* Corrige problemas de "fixed" em dispositivos móveis */
+    background-repeat: no-repeat; /* Evita que a imagem se repita */
+    min-height: 100vh; /* Garante que o fundo cubra toda a altura da tela */
+    overflow-x: hidden; /* Remove qualquer rolagem horizontal */
 }
 
 .saudacao {
@@ -10,6 +16,14 @@ body {
     font-family: Monaco, monospace;
     font-size: 30px;
     margin: 0;
+}
+
+.info {
+    text-align: left;
+    color: black;
+    font-family: Monaco, monospace;
+    font-size: 20px;
+    margin-top: 2%;
 }
 
 .nome {
@@ -29,24 +43,26 @@ body {
 }
 
 .container{
-    display:flex;
+    display: flex;
     justify-content: center;
-    align-items: center;
-    gap: 20px;
-    flex-direction: row-reverse;
+    align-items: center; /* Alinha verticalmente o texto com a foto */
+    flex-direction: row-reverse; /* Alinha os itens em uma linha (foto e texto lado a lado) */
+    gap: 20px; /* Espaçamento entre a foto e o texto */
+    position: absolute;
+    top: 50%;
+    left: 50%; 
+    transform: translate(-50%, -50%);
+    background: none;
 }
 
 .background-nome {
-    background-color: whitesmoke;
-    padding: 50px;
+    padding: 20px; /* Reduz o padding para melhor alinhamento */
     border-radius: 20px;
-    margin: 20px;
-    width: 400px;
-    height: 300px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    text-align: center;
-    margin-top: 50px;
-    margin-bottom: 50px;
+    margin: 0; /* Remove margens extras */
+    width: 500px; /* Ajusta a largura automaticamente ao conteúdo */
+    height: auto; /* Ajusta a altura automaticamente ao conteúdo */
+    text-align: left; /* Alinha o texto à esquerda */
+    background: none;
 }
 
 .foto-circulo {
@@ -68,4 +84,66 @@ body {
     width: 100%;
     object-fit: cover;
     object-position: center;
+}
+
+/* Para telas grandes (até 1440px) */
+@media (max-width: 1440px) {
+    body {
+        background: url('../imgs/background.png') no-repeat center center;
+        background-size: cover; /* Mantém a imagem cobrindo a tela */
+    }
+
+    .container {
+        gap: 30px; /* Aumenta o espaçamento entre os itens */
+    }
+
+    .background-nome {
+        width: 600px; /* Ajusta a largura para telas grandes */
+        padding: 20px; /* Mantém o padding confortável */
+    }
+
+    .foto-circulo {
+        width: 350px; /* Ajusta o tamanho da foto */
+        height: 350px;
+    }
+}
+
+/* Para telas médias (tablets, entre 768px e 1024px) */
+@media (max-width: 1024px) {
+    body {
+        background: url('../imgs/background.png') no-repeat center center;
+        background-size: cover; /* Mantém a imagem cobrindo a tela */
+    }
+
+    .container {
+        flex-direction: column; /* Alinha os itens verticalmente em telas menores */
+        gap: 10px; /* Reduz o espaçamento entre os itens */
+    }
+
+    .background-nome {
+        width: 90%; /* Ajusta a largura para caber melhor em telas menores */
+    }
+}
+
+/* Para telas pequenas (smartphones, até 768px) */
+@media (max-width: 768px) {
+    body {
+        background: url('../imgs/background.png') no-repeat center center;
+        background-size: cover; /* Mantém a imagem cobrindo a tela */
+    }
+
+    .container {
+        flex-direction: column; /* Alinha os itens verticalmente */
+        gap: 10px; /* Reduz o espaçamento entre os itens */
+    }
+
+    .background-nome {
+        width: 95%; /* Ajusta a largura para quase preencher a tela */
+        padding: 10px; /* Reduz o padding para telas menores */
+    }
+
+    .foto-circulo {
+        width: 300px; /* Reduz o tamanho da foto */
+        height: 300px;
+    }
 }
