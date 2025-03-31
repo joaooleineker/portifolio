@@ -8,8 +8,11 @@
     </head>
     <body>
         <header>
+            <div id="leineker"></div>
             <nav class="navbar">
-                <div class="logo"><a href="main.html"></a><span>leineker</span>.</div>
+                <div class="logo">
+                    <a href="#leineker">leineker</a><span>.</span>
+                </div>
                 <ul class="nav-links">
                     <li><a href="#projects">Projetos</a></li>
                     <li><a href="#skills">Skills</a></li>
@@ -38,17 +41,19 @@
                 </p>
             </div>
         </div>
-        <div class="techs-container">
-            <ul class="techs">
-                <li class="java-icon"><img src="imgs/java.png" alt="Java Icon"></li>
-                <li class="python-icon"><img src="imgs/python.png" alt="Python Icon"></li>
-                <li class="c++-icon"><img src="imgs/c++.png" alt="C++ Icon"></li>
-                <li class="separator">|</li>
-                <li class="html-icon"><img src="imgs/html.png" alt="HTML Icon"></li>
-                <li class="css-icon"><img src="imgs/css.png" alt="CSS Icon"></li>
-                <li class="javascript-icon"><img src="imgs/javascript.png" alt="JavaScript Icon"></li>
-                <li class="separator">|</li>
-                <li class="sql-icon"><img src="imgs/sql.png" alt="SQL Icon"></li>
+        <div id ="skills" class="slider" style="
+            --width: 100px;
+            --height: 100px;
+            --quantity: 7;
+            ">
+            <ul class="list">
+                <li class="item" style="--position: 1"><img src="imgs/java.png" alt="Java Icon"></li>
+                <li class="item" style="--position: 2"><img src="imgs/python.png" alt="Python Icon"></li>
+                <li class="item" style="--position: 3"><img src="imgs/c++.png" alt="C++ Icon"></li>
+                <li class="item" style="--position: 4"><img src="imgs/html.png" alt="HTML Icon"></li>
+                <li class="item" style="--position: 5"><img src="imgs/css.png" alt="CSS Icon"></li>
+                <li class="item" style="--position: 6"><img src="imgs/javascript.png" alt="JavaScript Icon"></li>
+                <li class="item" style="--position: 7"><img src="imgs/sql.png" alt="SQL Icon"></li>
             </ul>
         </div>
         <footer>
