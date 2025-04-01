@@ -283,7 +283,7 @@ footer{
     display: flex; /* Usa flexbox para alinhar os itens */
     justify-content: center; /* Centraliza os itens horizontalmente */
     flex-wrap: wrap; /* Permite que os itens quebrem para a próxima linha */
-    gap: 20px; /* Adiciona espaçamento entre os itens */
+    gap: 200px; /* Adiciona espaçamento entre os itens */
     padding: 0;
     list-style: none; /* Remove os marcadores da lista */
 }
@@ -305,7 +305,7 @@ footer{
 }
 
 .projeto p {
-    font-size: 16px; /* Ajusta o tamanho do texto */
+    font-size: 18px; /* Ajusta o tamanho do texto */
     color: black;
     margin: 0; /* Remove margens extras */
     font-family: Monaco, monospace; /* Define a fonte do rodapé */
