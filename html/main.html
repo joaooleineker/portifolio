@@ -37,17 +37,18 @@
             <div class="background-nome">
                 <p class="saudacao">Olá!</p>
                 <p class="nome">Sou <span>João Leineker</span>,</p>
-                <p class="info">Estudante de Engenharia de Computação e Desenvolvedor de Software,
+                <p id="skills" class="info">Estudante de Engenharia de Computação e Desenvolvedor de Software,
                     apaixonado por tecnologia e inovação.
                 </p>
             </div>
         </div>
-        <div id ="skills" class="slider" style="
+        <div class="slider" style="
             --width: 100px;
             --height: 100px;
             --quantity: 7;
             ">
             <ul class="list">
+                <div id="aboutme"></div>
                 <li class="item" style="--position: 1"><img src="imgs/java.png" alt="Java Icon"></li>
                 <li class="item" style="--position: 2"><img src="imgs/python.png" alt="Python Icon"></li>
                 <li class="item" style="--position: 3"><img src="imgs/c++.png" alt="C++ Icon"></li>
@@ -57,18 +58,35 @@
                 <li class="item" style="--position: 7"><img src="imgs/sql.png" alt="SQL Icon"></li>
             </ul>
         </div>
-        <div id="aboutme" class="aboutme">
-            <h2 class="aboutme-header">Sobre mim</h2>
+        <div class="aboutme">
+            <h2>Sobre mim</h2>
             <p>Olá! Sou João Eduardo Faccin Leineker, tenho 20 anos, e sou uma pessoa curiosa, persistente e sempre em busca de novos desafios. Desde cedo, me encantei pela ideia de entender como as coisas funcionam e, mais do que isso, como posso torná-las melhores.</p>
             <p>Gosto de resolver problemas, aprender algo novo todos os dias e transformar ideias em realidade. Para mim, cada obstáculo é uma oportunidade de crescimento, e acredito que a dedicação e a paciência são fundamentais para superar qualquer desafio.</p>
             <p>Atualmente estou cursando Engenharia de Computação, no 7º período. Se quiser bater um papo ou conhecer mais sobre o que faço, fique à vontade para entrar em contato!</p>
         </div>
         <div id="projects" class="projetos">
-            <h2 class="projects-header">Projetos</h2>
+            <h2>Projetos</h2>
             <ul class="lista-projetos">
-                <li><img src="imgs/bebedouro.jpeg" alt="Bebedouro"><p>Bebedouro Automático</p></li>
-                <li><p>Projeto 2</p></li>
+                <li class="projeto">
+                    <a href="https://github.com/joaooleineker/bebedouro-automatico-arduino" target="_blank"><img src="imgs/bebedouro.jpeg" alt="Bebedouro"></a>
+                    <p>Bebedouro Automático</p></li>
+                <li class="projeto"><p>Projeto 2</p></li>
             </ul>
+        </div>
+        <div id="contact" class="contato-container">
+            <h2>Contato</h2>
+            <div class="lista-contatos-container">
+                <ul class="lista-contato">
+                    <li>✉️ joaoeduardoleineker@gmail.com</li>
+                    <li>📞 +55 (41) 99717-3555</li>
+                </ul>
+                <ul class="lista-redes-sociais">
+                    <li class="linkedin-contato"><a href="https://linkedin.com/in/joaoleineker" target="_blank">
+                        <img src="imgs/linkedin-logo-contato.png" alt="Linkedin Logo">LinkedIn</a></li>
+                    <li class="github-contato"><a href="https://github.com/joaooleineker" target="_blank">
+                        <img src="imgs/github-logo.png" alt="GitHub Logo">GitHub</a></li>
+                </ul>
+            </div>
         </div>
         <footer>
             <p>&copy; 2025, joaoleineker.com.br </p>

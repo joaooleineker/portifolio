@@ -5,7 +5,7 @@ html, body {
     overflow-x: hidden; /* Remove qualquer rolagem horizontal */
     width: 100%; /* Garante que o body não ultrapasse a largura da tela */
     height: 100%; /* Garante que o body ocupe toda a altura da tela */
-    background-color: white; /* Define o fundo como branco */
+    background-color: #FAF9F6; /* Define o fundo como branco */
     scroll-behavior: smooth; /* Suaviza a rolagem */
 }
 
@@ -75,7 +75,7 @@ html, body {
     display: flex;
     align-items: center;
     flex-shrink: 0;
-    border: 5px solid white;
+    border: 5px solid #FAF9F6;
     border-style: hidden;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     max-width: 100%; /* Garante que os elementos não ultrapassem a largura da tela */
@@ -100,7 +100,7 @@ html, body {
     top: 0;
     left: 0;
     width: 100%; /* Faz a navbar ocupar toda a largura */
-    background: white; /* Define o fundo como branco */
+    background: #FAF9F6; /* Define o fundo como branco */
     display: flex;
     justify-content: flex-start; /* Espaça os itens entre as extremidades */
     align-items: center; /* Centraliza verticalmente os itens */
@@ -242,7 +242,7 @@ html, body {
 }
 
 footer{
-    background-color: white; /* Define o fundo como branco */
+    background-color: #FAF9F6; /* Define o fundo como branco */
     color: black; /* Define a cor do texto como preto */
     text-align: center; /* Centraliza o texto */
     padding: 20px; /* Adiciona espaçamento interno */
@@ -254,34 +254,29 @@ footer{
 }
 
 .aboutme {
-    text-align: center;
-    color: black;
+    text-align: center; /* Centraliza o título e os itens */
+    margin: 50px auto; /* Adiciona margem acima e abaixo */
     font-family: Monaco, monospace;
     font-size: 24px;
     margin-top: 2%;
     margin-left: 20%;
     margin-right: 20%;
     margin-bottom: 2%;
+    margin-bottom: 200px;
+    margin-top: 200px;
 }
 
 .projetos {
     text-align: center; /* Centraliza o título e os itens */
-    padding: 20px; /* Adiciona espaçamento interno */
-    margin-top: 2%;
-    margin-left: 20%;
-    margin-right: 20%;
-    margin-bottom: 2%;
-}
-
-.projects-header {
-    text-align: center;
-    color: black;
+    margin: 50px auto; /* Adiciona margem acima e abaixo */
     font-family: Monaco, monospace;
     font-size: 24px;
     margin-top: 2%;
     margin-left: 20%;
     margin-right: 20%;
     margin-bottom: 2%;
+    margin-bottom: 200px;
+    margin-top: 200px;
 }
 
 .lista-projetos {
@@ -299,12 +294,12 @@ footer{
     align-items: center; /* Centraliza os itens dentro do projeto */
     width: 200px; /* Define uma largura fixa para os itens */
     text-align: center; /* Centraliza o texto dentro do item */
-    gap: 10px; /* Espaçamento entre a imagem e o texto */
+    gap: 20px; /* Espaçamento entre a imagem e o texto */
 }
 
 .projeto img {
-    width: 100%; /* Faz a imagem ocupar toda a largura do item */
-    height: auto; /* Mantém a proporção da imagem */
+    width: 300px; /* Faz a imagem ocupar toda a largura do item */
+    height: 300px; /* Mantém a proporção da imagem */
     border-radius: 10px; /* Adiciona bordas arredondadas */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adiciona uma sombra */
 }
@@ -314,6 +309,69 @@ footer{
     color: black;
     margin: 0; /* Remove margens extras */
     font-family: Monaco, monospace; /* Define a fonte do rodapé */
+}
+
+.projeto img:hover {
+    transform: scale(1.1); /* Aumenta o ícone ao passar o mouse */
+    transition: transform 0.4s ease; /* Suaviza o efeito de hover */
+}
+
+.contato-container{
+    text-align: center; /* Centraliza o título e os itens */
+    margin: 50px auto; /* Adiciona margem acima e abaixo */
+    font-family: Monaco, monospace;
+    font-size: 24px;
+    gap: 20px;
+    justify-content: center;
+    display: flex; /* Usa flexbox para alinhar os itens */
+    flex-direction: column; /* Alinha os itens verticalmente */
+}
+
+.lista-contatos-container {
+    display: flex; /* Usa flexbox para alinhar horizontalmente */
+    justify-content: center; /* Centraliza os itens */
+    align-items: center; /* Alinha verticalmente */
+    gap: 50px; /* Adiciona espaçamento entre as listas */
+    margin-top: 20px; /* Ajusta o espaçamento superior */
+}
+
+.lista-contato, .lista-redes-sociais {
+    list-style: none; /* Remove os marcadores das listas */
+    padding: 0; /* Remove o padding padrão */
+    margin: 0; /* Remove as margens padrão */
+    font-family: Monaco, monospace; /* Define a fonte */
+    font-size: 16px; /* Ajusta o tamanho da fonte */
+}
+
+.lista-contato li, .lista-redes-sociais li {
+    display: flex;
+    align-items: center; /* Garante alinhamento vertical */
+    gap: 10px; /* Mantém espaçamento consistente */
+    margin-bottom: 20px; /* Ajusta o espaçamento inferior */
+}
+
+.lista-contato li {
+    margin-bottom: 32px;
+    margin-top: 8px;
+}
+
+.lista-redes-sociais a {
+    display: flex;
+    align-items: center; /* Alinha o ícone e o texto */
+    text-decoration: none;
+    color: black;
+    transition: color 0.3s ease;
+}
+
+.lista-redes-sociais a img {
+    width: 30px; /* Ajusta o tamanho dos ícones */
+    height: 30px; /* Ajusta o tamanho dos ícones */
+    object-fit: contain; /* Mantém a proporção da imagem */
+    margin-right: 10px; /* Adiciona espaçamento entre o ícone e o texto */
+}
+
+.lista-redes-sociais a:hover {
+    color: midnightblue; /* Muda a cor ao passar o mouse */
 }
 
 /* Para telas grandes (até 1440px) */
