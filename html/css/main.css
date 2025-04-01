@@ -89,6 +89,7 @@ html, body {
     object-position: center;
 }
 
+
 /* Garante que nenhum elemento ultrapasse os limites da tela */
 .container, .background-nome, .foto-circulo {
     max-width: 100%; /* Garante que os elementos não ultrapassem a largura da tela */
