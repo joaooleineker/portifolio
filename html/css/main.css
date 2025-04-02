@@ -151,7 +151,7 @@ html, body {
 
 .social-icons {
     position: absolute; /* Posiciona os ícones de forma absoluta */
-    left: 92%;
+    left: 88.5%;
     display: flex;
     gap: 15px; /* Espaçamento entre os ícones */
 }
@@ -165,6 +165,29 @@ html, body {
 .social-icons img:hover {
     transform: scale(1.1); /* Aumenta o ícone ao passar o mouse */
     transition: transform 0.3s ease; /* Suaviza o efeito de hover */
+}
+
+.social-icons .language-switcher {
+    display: flex; /* Mantém alinhado com o conteúdo */
+    align-items: center; /* Centraliza verticalmente */
+    justify-content: center; /* Centraliza horizontalmente */
+    width: auto; /* Ajusta ao conteúdo */
+    height: auto; /* Ajusta ao conteúdo */
+    padding: 0; /* Remove espaços extras */
+    margin: 0; /* Remove margens desnecessárias */
+    font-family: Monaco, monospace; /* Define a fonte do rodapé */
+    font-size: 24px;
+    text-decoration: none; /* Remove o sublinhado dos links */
+    color: black;
+}
+
+.social-icons .language-switcher span {
+    background-color: black;
+    color: #FAF9F6;
+    border-radius: 5px;
+    padding-left: 5px; /* Adiciona espaço à esquerda */
+    padding-right: 5px; /* Adiciona espaço à direita */
+    padding-bottom: 2px; /* Adiciona espaço abaixo */
 }
 
 .linkedin-icon {
