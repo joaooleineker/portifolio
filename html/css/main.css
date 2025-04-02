@@ -6,7 +6,7 @@ html, body {
     width: 100%; /* Garante que o body não ultrapasse a largura da tela */
     height: 100%; /* Garante que o body ocupe toda a altura da tela */
     background-color: #FAF9F6; /* Define o fundo como branco */
-    scroll-behavior: smooth; /* Suaviza a rolagem */
+    scroll-behavior: smooth;
 }
 
 .saudacao {
@@ -150,7 +150,7 @@ html, body {
 }
 
 .social-icons {
-    position: absolute; /* Posiciona os ícones de forma absoluta */
+    position: inherit; /* Posiciona os ícones de forma absoluta */
     left: 88.5%;
     display: flex;
     gap: 15px; /* Espaçamento entre os ícones */
@@ -413,7 +413,27 @@ footer{
         height: 350px;
     }
     .social-icons {
-        margin-left: 55%; /* Ajusta a posição dos ícones para telas grandes */
+        margin-left: -4%; /* Ajusta a posição dos ícones para telas grandes */
+    }   
+}
+
+/* Para telas grandes (até 1440px) */
+@media (max-width: 1366px) {
+    .container {
+        gap: 30px; /* Aumenta o espaçamento entre os itens */
+    }
+
+    .background-nome {
+        width: 600px; /* Ajusta a largura para telas grandes */
+        padding: 20px; /* Mantém o padding confortável */
+    }
+
+    .foto-circulo {
+        width: 350px; /* Ajusta o tamanho da foto */
+        height: 350px;
+    }
+    .social-icons {
+        margin-left: -5%; /* Ajusta a posição dos ícones para telas grandes */
     }
 }
 
@@ -428,7 +448,47 @@ footer{
         width: 90%; /* Ajusta a largura para caber melhor em telas menores */
     }
     .social-icons {
-        margin-left: 38%; /* Ajusta a posição dos ícones para telas grandes */
+        margin-left: -10%; /* Ajusta a posição dos ícones para telas grandes */
+    }
+    .slider .list {
+        min-width: calc(100px * 15); /* Define manualmente a largura mínima para 15 itens */
+    }
+    .slider .list .item {
+        animation: autoRun 10s linear infinite;
+        animation-delay: calc((15s / 15) * (var(--position) - 1)); /* Aumenta o tempo entre os itens */
+    }
+}
+
+/* Para telas médias (tablets, entre 768px e 1024px) */
+@media (max-width: 1024px) and (max-height: 1366px) {
+    .container {
+        flex-direction: column-reverse; /* Alinha os itens horizontalmente */
+        gap: 10px; /* Reduz o espaçamento entre os itens */
+    }
+
+    .background-nome {
+        width: 90%; /* Ajusta a largura para caber melhor em telas menores */
+    }
+    .social-icons {
+        margin-left: -10%; /* Ajusta a posição dos ícones para telas grandes */
+    }
+    .slider .list {
+        min-width: calc(100px * 15); /* Define manualmente a largura mínima para 15 itens */
+    }
+    .slider .list .item {
+        animation: autoRun 10s linear infinite;
+        animation-delay: calc((15s / 15) * (var(--position) - 1)); /* Aumenta o tempo entre os itens */
+    }
+    .background-nome {
+        padding: 20px; /* Mantém o espaçamento interno */
+        border-radius: 20px;
+        margin: 0 auto; /* Centraliza horizontalmente o contêiner */
+        width: 550px; /* Define a largura */
+        height: auto; /* Ajusta a altura automaticamente ao conteúdo */
+        text-align: center; /* Centraliza o texto */
+        background: none;
+        max-width: 100%; /* Garante que o elemento não ultrapasse a largura da tela */
+        box-sizing: border-box; /* Inclui padding e bordas no cálculo da largura */
     }
 }
 
@@ -450,29 +510,90 @@ footer{
         height: 300px;
     }
     .social-icons {
-        margin-left: 17%; /* Ajusta a posição dos ícones para telas grandes */
+        position: inherit;
     }
-    .techs-container img {
-        width: 50px; /* Ajusta o tamanho do ícone */
-        height: 50px;
-        object-fit: contain;
+    .background-nome {
+        padding: 20px; /* Mantém o espaçamento interno */
+        border-radius: 20px;
+        margin: 0 auto; /* Centraliza horizontalmente o contêiner */
+        width: 550px; /* Define a largura */
+        height: auto; /* Ajusta a altura automaticamente ao conteúdo */
+        text-align: center; /* Centraliza o texto */
+        background: none;
+        max-width: 100%; /* Garante que o elemento não ultrapasse a largura da tela */
+        box-sizing: border-box; /* Inclui padding e bordas no cálculo da largura */
     }
+
+    .lista-projetos {
+        flex-wrap: nowrap; /* Impede que os itens quebrem para a próxima linha */
+        gap: 20px; /* Define o espaçamento entre os itens */
+    }
+
+    .lista-projetos li img {
+        width: 150px; /* Ajusta o tamanho das imagens */
+        height: 150px; /* Mantém a proporção das imagens */
+        border-radius: 10px; /* Adiciona bordas arredondadas */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adiciona uma sombra */
+    }
+    .nav-links {
+        margin-left: -25px;
+    }
+}
+
+@media (max-width: 820px){
+    .container {
+        flex-direction: column-reverse; /* Alinha os itens verticalmente */
+        gap: 10px; /* Reduz o espaçamento entre os itens */
+    }
+
+    .background-nome {
+        width: 95%; /* Ajusta a largura para quase preencher a tela */
+        padding: 10px; /* Reduz o padding para telas menores */
+    }
+
+    .foto-circulo {
+        width: 300px; /* Reduz o tamanho da foto */
+        height: 300px;
+    }
+    .social-icons {
+        margin-left: -15%; /* Ajusta a posição dos ícones para telas grandes */
+    }
+    .background-nome {
+        padding: 20px; /* Mantém o espaçamento interno */
+        border-radius: 20px;
+        margin: 0 auto; /* Centraliza horizontalmente o contêiner */
+        width: 550px; /* Define a largura */
+        height: auto; /* Ajusta a altura automaticamente ao conteúdo */
+        text-align: center; /* Centraliza o texto */
+        background: none;
+        max-width: 100%; /* Garante que o elemento não ultrapasse a largura da tela */
+        box-sizing: border-box; /* Inclui padding e bordas no cálculo da largura */
+    }
+    .lista-projetos{
+        gap:80px;
+    }
+    .lista-projetos li img {
+        width: 200px; /* Faz a imagem ocupar toda a largura do item */
+        height: 200px; /* Mantém a proporção da imagem */
+        border-radius: 10px; /* Adiciona bordas arredondadas */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adiciona uma sombra */
+    }
+}
 
 @media (max-width: 500px) {
-        .container {
-            flex-direction: column-reverse; /* Alinha os itens verticalmente */
-            gap: 5px; /* Reduz o espaçamento entre os itens */
-        }
+    .container {
+        flex-direction: column-reverse; /* Alinha os itens verticalmente */
+        gap: 5px; /* Reduz o espaçamento entre os itens */
+    }
 
-        .background-nome {
-            width: 100%; /* Ajusta a largura para preencher a tela */
-            padding: 5px; /* Reduz o padding para telas menores */
-        }
+    .background-nome {
+        width: 100%; /* Ajusta a largura para preencher a tela */
+        padding: 5px; /* Reduz o padding para telas menores */
+    }
 
-        .foto-circulo {
-            width: 250px; /* Reduz o tamanho da foto */
-            height: 250px;
-            display: none;
-        }
+    .foto-circulo {
+        width: 250px; /* Reduz o tamanho da foto */
+        height: 250px;
+        display: none;
     }
 }
