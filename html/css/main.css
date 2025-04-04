@@ -1,3 +1,11 @@
+:root {
+    --dark: 0;
+    --transition: 0.28s;
+    --font-size: 1.2rem;
+    --bg: hsl(200, 100%, 90%);
+    --color: hsl(210, 50%, 20%);
+  }
+
 /* Garante que o html e o body não tenham rolagem horizontal */
 html, body {
     padding: 0;
@@ -65,6 +73,86 @@ html, body {
     max-width: 100%; /* Garante que os elementos não ultrapassem a largura da tela */
     box-sizing: border-box; /* Inclui padding e bordas no cálculo da largura */
 }
+
+@media(prefers-color-scheme: dark) {
+    :root {
+      --dark: 1;
+      --bg: hsl(210, 30%, 15%);
+      --color: hsl(210, 20%, 90%);
+    }
+  }
+  
+  .animated-curriculum-button {
+    cursor: pointer;
+    font-family: Monaco, monospace;
+    font-weight: bold;
+    font-size: var(--font-size);
+    background: var(--bg);
+    color: var(--color);
+    border: 4px solid hsl(210, 50%, 40%, 0.3);
+    border-radius: 8px;
+    transition: border-color var(--transition);
+    position: relative;
+    outline: none;
+  }
+  
+  .animated-curriculum-button:hover {
+    --hovered: 1;
+    border-color: hsl(210, 50%, 40%, 1);
+  }
+  
+  .animated-curriculum-button > span {
+    display: grid;
+    grid-template-columns: calc((var(--font-size) * 1.75) * (1 - var(--hovered, 0))) 1fr calc((var(--font-size) * 1.75) * var(--hovered, 0));
+    align-items: center;
+    padding: calc(var(--font-size) * 0.9) calc(var(--font-size) * 1.36);
+    background: var(--bg);
+    overflow: hidden;
+    transition: grid-template-columns var(--transition);
+  }
+  
+  .animated-curriculum-button:after {
+    content: "";
+    position: absolute;
+    inset: calc(var(--font-size) * -0.025);
+    background: hsl(0 0% calc(var(--dark) * 100%) / 0.45);
+    filter: blur(calc(var(--font-size) * 0.75));
+    scale: var(--hovered, 0);
+    z-index: -1;
+    transition: scale var(--transition);
+  }
+  
+  .animated-curriculum-button:is(:focus-visible, :hover) {
+    --hovered: 1;
+  }
+  
+  .animated-curriculum-button span span:nth-of-type(1) {
+    padding-right: calc(var(--font-size) * 0.75);
+    width: var(--font-size);
+  }
+  
+  .animated-curriculum-button span span:nth-of-type(3) {
+    padding-left: calc(var(--font-size) * 0.75);
+    width: var(--font-size);
+  }
+  
+  .animated-curriculum-button svg {
+    display: inline-block;
+    transition: translate var(--transition), opacity var(--transition);
+  }
+  
+  .animated-curriculum-button span span:nth-of-type(3) svg {
+    stroke-width: 3;
+    translate: calc((1 - var(--hovered, 0)) * (var(--font-size) * 3)) 8%;
+    width: calc(var(--font-size) * 1);
+    opacity: var(--hovered, 0);
+  }
+  
+  .animated-curriculum-button span span:nth-of-type(1) svg {
+    stroke-width: 3;
+    translate: calc(((var(--hovered, 0) * var(--font-size)) * -3) + 10%) 8%;
+    width: calc(var(--font-size) * 0.8);
+  }
 
 .foto-circulo {
     border-radius: 50%;
