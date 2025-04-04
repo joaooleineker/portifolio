@@ -2,7 +2,7 @@
     --dark: 0;
     --transition: 0.28s;
     --font-size: 1.2rem;
-    --bg: hsl(200, 100%, 90%);
+    --bg: #FAF9F6
     --color: hsl(210, 50%, 20%);
   }
 
@@ -76,13 +76,13 @@ html, body {
 
 @media(prefers-color-scheme: dark) {
     :root {
-      --dark: 1;
-      --bg: hsl(210, 30%, 15%);
-      --color: hsl(210, 20%, 90%);
+        --dark: 1;
+        --bg: hsl(210, 30%, 15%);
+        --color: hsl(210, 20%, 90%);
     }
-  }
+}
   
-  .animated-curriculum-button {
+.animated-curriculum-button {
     cursor: pointer;
     font-family: Monaco, monospace;
     font-weight: bold;
@@ -94,14 +94,14 @@ html, body {
     transition: border-color var(--transition);
     position: relative;
     outline: none;
-  }
+}
   
-  .animated-curriculum-button:hover {
+.animated-curriculum-button:hover {
     --hovered: 1;
-    border-color: hsl(210, 50%, 40%, 1);
-  }
+    border-color: midnightblue;
+}
   
-  .animated-curriculum-button > span {
+.animated-curriculum-button > span {
     display: grid;
     grid-template-columns: calc((var(--font-size) * 1.75) * (1 - var(--hovered, 0))) 1fr calc((var(--font-size) * 1.75) * var(--hovered, 0));
     align-items: center;
@@ -109,9 +109,9 @@ html, body {
     background: var(--bg);
     overflow: hidden;
     transition: grid-template-columns var(--transition);
-  }
+}
   
-  .animated-curriculum-button:after {
+.animated-curriculum-button:after {
     content: "";
     position: absolute;
     inset: calc(var(--font-size) * -0.025);
@@ -120,39 +120,39 @@ html, body {
     scale: var(--hovered, 0);
     z-index: -1;
     transition: scale var(--transition);
-  }
+}
   
-  .animated-curriculum-button:is(:focus-visible, :hover) {
+.animated-curriculum-button:is(:focus-visible, :hover) {
     --hovered: 1;
-  }
+}
   
-  .animated-curriculum-button span span:nth-of-type(1) {
+.animated-curriculum-button span span:nth-of-type(1) {
     padding-right: calc(var(--font-size) * 0.75);
     width: var(--font-size);
-  }
+}
   
-  .animated-curriculum-button span span:nth-of-type(3) {
+.animated-curriculum-button span span:nth-of-type(3) {
     padding-left: calc(var(--font-size) * 0.75);
     width: var(--font-size);
-  }
+}
   
-  .animated-curriculum-button svg {
+.animated-curriculum-button svg {
     display: inline-block;
     transition: translate var(--transition), opacity var(--transition);
-  }
+}
   
-  .animated-curriculum-button span span:nth-of-type(3) svg {
+.animated-curriculum-button span span:nth-of-type(3) svg {
     stroke-width: 3;
     translate: calc((1 - var(--hovered, 0)) * (var(--font-size) * 3)) 8%;
     width: calc(var(--font-size) * 1);
     opacity: var(--hovered, 0);
-  }
+}
   
-  .animated-curriculum-button span span:nth-of-type(1) svg {
+.animated-curriculum-button span span:nth-of-type(1) svg {
     stroke-width: 3;
     translate: calc(((var(--hovered, 0) * var(--font-size)) * -3) + 10%) 8%;
     width: calc(var(--font-size) * 0.8);
-  }
+}
 
 .foto-circulo {
     border-radius: 50%;
