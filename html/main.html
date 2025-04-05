@@ -2,7 +2,7 @@
 <html lang = "pt-br">
     <head>
         <meta charset="utf-8">
-        <title>João Leineker</title>
+        <title>Leineker | Portifólio</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="css/main.css">
     </head>
@@ -13,12 +13,15 @@
                 <div class="logo">
                     <a href="#leineker">leineker</a><span>.</span>
                 </div>
-                <ul class="nav-links">
+                <ul class="nav-links" id="mobileMenu">
                     <li><a href="#aboutme">Sobre mim</a></li>
                     <li><a href="#projects">Projetos</a></li>
                     <li><a href="#skills">Skills</a></li>
                     <li><a href="#contact">Contato</a></li>
                 </ul>
+                <div class="hamburger" id="hamburger">
+                    &#9776; <!-- esse é o símbolo ☰ -->
+                  </div>
                 <div class="social-icons">
                     <a class="language-switcher" href="main-en.html"><span>pt</span>|en</a>
                     <a href="https://www.linkedin.com/in/joaoleineker" class="linkedin-icon" target="_blank">
@@ -28,6 +31,24 @@
                         <img src="imgs/github-logo.png" alt="GitHub Icon">
                     </a>
                 </div>
+                <script>
+                    // Seleciona o botão e o menu
+                    const hamburger = document.querySelector('.hamburger');
+                    const navLinks = document.querySelector('.nav-links');
+                    const links = document.querySelectorAll('.nav-links a');
+
+                    // Abre/fecha o menu ao clicar no botão hambúrguer
+                    hamburger.addEventListener('click', () => {
+                        navLinks.classList.toggle('active');
+                    });
+
+                    // Fecha o menu ao clicar em qualquer item do menu
+                    links.forEach(link => {
+                        link.addEventListener('click', () => {
+                            navLinks.classList.remove('active');
+                        });
+                    });
+                </script>
             </nav>
         </header>
         <div class="container">
